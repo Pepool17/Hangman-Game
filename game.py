@@ -12,7 +12,7 @@ def run():
         system('cls')
         f.print_only_one_draw('title.txt')
         f.print_men(numb)
-        f.print_draw(word)
+        #f.print_draw(word)
         print('')
         print('word: ', end = '')
         f.print_draw(lines)
