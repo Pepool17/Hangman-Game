@@ -19,14 +19,15 @@ def random_word():
 
 def print_men(name = 'men.txt'):
     try:
-        draw = []    
+            
         with open(name, 'r', encoding = 'utf8') as man:
             for _ in range(7):
+                draw = []
                 for _ in range(19):
                     line = man.readline()
                     draw.append(line)
                 yield draw
-            
+                
     except FileNotFoundError:
         print("Error : The file isn't found" )
         
@@ -36,22 +37,15 @@ def one_read(name):
         with open(name, 'r', encoding = 'utf8') as f:
             archive = f.readlines()
             for line in archive:
-                print(line)
-
+                print(line, end = '')
+            print('\n')
     except FileNotFoundError:
         print("Error : The file isn't found" )
     
 
-def run():
-    one_read('title.txt') 
-    list = print_men()
-    draw = next(list)
+def print_draw(draw):
     for line in draw:
-        print(line)
-
-
-if __name__ == '__main__':
-    run()
+        print(line, end = '')
 
 
 
