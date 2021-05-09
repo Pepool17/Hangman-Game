@@ -12,9 +12,24 @@ def read():
         return values
 
 
+def normalize(word):
+    replacements = (
+        ('á', 'a'),
+        ('é', 'e'),
+        ('í', 'i'),
+        ('ó', 'o'),
+        ('ú', 'u'),
+    )
+    for a, b in replacements:
+        word = word.replace(a, b)
+
+    return word 
+
+
 def random_word():
     dictionary = read()
     word = random.choice(dictionary)
+    word = normalize(word)
     return list(word)
 
 
@@ -39,29 +54,29 @@ def print_draw(draw):
 
 
 def print_men(numb):
-    men_array = men()
-    array0 = next(men_array)
-    array1 = next(men_array)
-    array2 = next(men_array)
-    array3 = next(men_array)
-    array4 = next(men_array)
-    array5 = next(men_array)
-    array6 = next(men_array)
+    men_word = men()
+    word0 = next(men_word)
+    word1 = next(men_word)
+    word2 = next(men_word)
+    word3 = next(men_word)
+    word4 = next(men_word)
+    word5 = next(men_word)
+    word6 = next(men_word)
 
     if numb == 0:
-        print_draw(array0)
+        print_draw(word0)
     elif  numb == 1:
-        print_draw(array1)
+        print_draw(word1)
     elif numb == 2:
-        print_draw(array2)
+        print_draw(word2)
     elif numb == 3:
-        print_draw(array3)
+        print_draw(word3)
     elif numb == 4:
-        print_draw(array4)
+        print_draw(word4)
     elif numb == 5:
-        print_draw(array5)
+        print_draw(word5)
     else:
-        print_draw(array6)
+        print_draw(word6)
 
         
 
@@ -94,3 +109,4 @@ def into_to_letter():
 
 
 
+    

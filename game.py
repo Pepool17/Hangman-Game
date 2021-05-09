@@ -30,17 +30,23 @@ def run():
 
             if list(map(lambda x: x.upper(),word)) == lines:
                 system('cls')
-                print('\t  GANASTE\n')
                 print(f'La parabra era: ', end='')
                 f.print_draw(list(map(lambda x: x.upper(),word)))
                 print('')
-                f.print_only_one_draw('pikachu.txt') 
+                f.print_only_one_draw('win.txt') 
                 break
+
+        elif letter == False:
+            system('pause')
 
         else:
             if life == 1:
                 system('cls')
-                print('\nYOU LOST')
+                print(f'La parabra era: ', end='')
+                f.print_draw(list(map(lambda x: x.upper(),word)))
+                print('')
+                f.print_only_one_draw('lost.txt')
+                system('pause')
                 break
             life -= 1
             numb += 1

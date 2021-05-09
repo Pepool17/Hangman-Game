@@ -1,5 +1,6 @@
 import functions as f
 
-a = ['1', '2', 'h']
-
+a = 'hála'
+a = f.normalize(a)
+print(a)
 
