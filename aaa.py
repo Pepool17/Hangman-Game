@@ -1,5 +1,6 @@
-import numpy as np
-a = '12345'
-a = []
+import functions as f
 
-print(a)
+while True:
+    letter = f.into_to_letter();
+    print(letter)
+    
