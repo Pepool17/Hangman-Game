@@ -15,10 +15,10 @@ def read():
 def random_word():
     dictionary = read()
     word = random.choice(dictionary)
-    return word
+    return list(word)
 
 
-def print_men(name = 'men.txt'):
+def men(name = 'men.txt'):
     try:
             
         with open(name, 'r', encoding = 'utf8') as man:
@@ -31,9 +31,41 @@ def print_men(name = 'men.txt'):
                 
     except FileNotFoundError:
         print("Error : The file isn't found" )
+
+
+def print_draw(draw):
+    for line in draw:
+        print(line, end = '')
+
+
+def print_men(numb):
+    men_array = men()
+    array0 = next(men_array)
+    array1 = next(men_array)
+    array2 = next(men_array)
+    array3 = next(men_array)
+    array4 = next(men_array)
+    array5 = next(men_array)
+    array6 = next(men_array)
+
+    if numb == 0:
+        print_draw(array0)
+    elif  numb == 1:
+        print_draw(array1)
+    elif numb == 2:
+        print_draw(array2)
+    elif numb == 3:
+        print_draw(array3)
+    elif numb == 4:
+        print_draw(array4)
+    elif numb == 5:
+        print_draw(array5)
+    else:
+        print_draw(array6)
+
         
 
-def one_read(name):
+def print_only_one_draw(name):
     try:
         with open(name, 'r', encoding = 'utf8') as f:
             archive = f.readlines()
@@ -43,12 +75,7 @@ def one_read(name):
     except FileNotFoundError:
         print("Error : The file isn't found" )
     
-
-def print_draw(draw):
-    for line in draw:
-        print(line, end = '')
-
-
+    
 def into_to_letter():
     try:
         letter = input('Write a letter: ')
@@ -63,8 +90,7 @@ def into_to_letter():
         return False
 
 
-
-
+        
 
 
 
